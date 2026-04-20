@@ -1,20 +1,45 @@
-# Software-Design-Report
-An example of a Software Design Report
-
-Summary of the Client and Software Requirements: 
-The Gaming Room is a client that started a game for Android and has decided to expand to include more operating systems. The software needs to be able to support multiple teams and players, enforce unique naming, and allow for one instance of the game in memory (optimize performance). The goal is to design a distributed application that can operate across multiple platforms and a focus on maintaining data integrity, responsiveness, and security. 
-
-Strengths in Documentation: 
-I think I was clear and incorporated key software designs such as Singleton and Iterator. These patterns are used for efficient memory use, code maintainability, and scalability.
-
-Helpful Aspects: 
-Working through a formal document design helped me pull together what we were learning at the time. It also helps to see the entire document to get the entire picture of the project. 
-
-Which section would you improve?
-I think I would revise the System Architecture View section. It is just functional. I would want to include more visual diagrams and flowcharts, which I need to improve on generally. 
-
-Thinking of user needs?
-Thinking about how someone would interact with a program is essential. Considering this is a game that people would hopefully choose to play, creating a program that doesn't consider ease of use of the user end would fail. 
-
-My approach to Software Design: 
-My approach was looking into industry standard and the resources for this assignment. In future projects, I would continue to use a UML diagram and grow my experience. Like using a Linux, I am very curious now. 
+# Software Design: Cross-Platform Game Architecture
+ 
+A software design document for a client expanding an Android game to multiple operating systems. Covers architecture decisions, design patterns, and the reasoning behind each choice.
+ 
+---
+ 
+## The Design Problem
+ 
+| Requirement | Challenge |
+|---|---|
+| Multiple teams and players | Data model needs to scale |
+| Unique naming enforcement | Requires validation at the service layer |
+| Single game instance in memory | Classic Singleton use case |
+| Cross-platform support | Architecture must decouple platform from logic |
+ 
+---
+ 
+## Design Decisions
+ 
+**Singleton Pattern**
+Ensures only one game instance exists in memory regardless of how many clients connect. Prevents duplicate state and reduces memory overhead.
+ 
+**Iterator Pattern**
+Keeps traversal logic separate from the collection structure. Makes the code easier to maintain as teams and players scale up.
+ 
+**Cross-Platform Architecture**
+Designed to support Windows, macOS, Linux, and mobile from a shared codebase. Platform-specific concerns are isolated rather than embedded throughout the logic.
+ 
+---
+ 
+## What I Would Improve
+ 
+The System Architecture View section is functional but lacks visual depth. I would add more diagrams and flowcharts. UML alone does not always communicate the full picture, and visual documentation is something I am actively working to improve.
+ 
+---
+ 
+## Tech Stack
+ 
+| Tool | Use |
+|---|---|
+| UML | System and workflow diagrams |
+| Singleton Pattern | Game instance management |
+| Iterator Pattern | Team and player traversal |
+ 
+---
